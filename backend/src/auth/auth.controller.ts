@@ -6,7 +6,7 @@ import { SignupDto } from './dto/signup.dto.js';
 import { LoginDto } from './dto/login.dto.js';
 import { PrivacyAcceptanceDto } from './dto/privacy.dto.js';
 
-@Controller('auth')
+@Controller('api/auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
 

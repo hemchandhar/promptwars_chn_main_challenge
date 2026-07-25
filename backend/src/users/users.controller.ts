@@ -5,7 +5,7 @@ import { RolesGuard } from '../common/roles.guard.js';
 import { Roles } from '../common/roles.decorator.js';
 import { OnboardingDto } from './dto/onboarding.dto.js';
 
-@Controller('users')
+@Controller('api/users')
 @UseGuards(JwtAuthGuard)
 export class UsersController {
   constructor(private usersService: UsersService) {}

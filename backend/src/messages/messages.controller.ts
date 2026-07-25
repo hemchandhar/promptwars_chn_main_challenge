@@ -5,7 +5,7 @@ import { RolesGuard } from '../common/roles.guard.js';
 import { Roles } from '../common/roles.decorator.js';
 import { SendMessageDto } from './dto/send-message.dto.js';
 
-@Controller('messages')
+@Controller('api/messages')
 @UseGuards(JwtAuthGuard, RolesGuard)
 @Roles('individual')
 export class MessagesController {

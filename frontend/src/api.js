@@ -1,4 +1,7 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3001';
+// In production the frontend is served by the same NestJS app (see backend/src/app.module.ts's
+// ServeStaticModule), so requests are same-origin — set VITE_API_BASE='' at build time for that.
+// Locally the frontend runs on Vite's dev server (5173) against the backend on 3001.
+const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:3001';
 
 function getToken() {
   return localStorage.getItem('co_token');
@@ -16,7 +19,7 @@ async function request(path, { method = 'GET', body, auth = true } = {}) {
 
   let res;
   try {
-    res = await fetch(`${API_BASE}${path}`, {
+    res = await fetch(`${API_BASE}/api${path}`, {
       method,
       headers,
       body: body !== undefined ? JSON.stringify(body) : undefined,

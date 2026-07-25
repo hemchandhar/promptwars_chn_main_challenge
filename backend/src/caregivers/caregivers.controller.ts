@@ -6,7 +6,7 @@ import { Roles } from '../common/roles.decorator.js';
 import { LinkIndividualDto } from './dto/link.dto.js';
 import { SendEncouragementDto } from './dto/encouragement.dto.js';
 
-@Controller('caregivers')
+@Controller('api/caregivers')
 @UseGuards(JwtAuthGuard, RolesGuard)
 @Roles('caregiver')
 export class CaregiversController {

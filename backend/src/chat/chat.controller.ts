@@ -6,7 +6,7 @@ import { Roles } from '../common/roles.decorator.js';
 import { SendChatDto } from './dto/send-chat.dto.js';
 import { AvailabilityDto } from './dto/availability.dto.js';
 
-@Controller('chat')
+@Controller('api/chat')
 @UseGuards(JwtAuthGuard)
 export class ChatController {
   constructor(private chatService: ChatService) {}
